@@ -1,11 +1,26 @@
 import axios from "axios";
-import { AnimeDetailsResponse } from "../_types/anime";
+import { AnimeDetails } from "../_types/anime";
 
-export const fetchAnimeDetails = async (): Promise<AnimeDetailsResponse> => {
-  const { data } = await axios.get<AnimeDetailsResponse>(
+export const fetchAnimeDetails = async (): Promise<AnimeDetails> => {
+  const { data } = await axios.get<AnimeDetails>(
     "https://api.animethemes.moe/anime"
   );
   return data;
+};
+
+export const fetchSeasonalAnime = async (
+  year: number,
+  season: string
+): Promise<AnimeDetails> => {
+  try {
+    const { data } = await axios.get<AnimeDetails>(
+      `https://api.animethemes.moe/anime?include=images&filter[year]=${year}&filter[season]=${season}`
+    );
+    return data;
+  } catch (error: any) {
+    console.error("Error fetching seasonal anime:", error);
+    throw error;
+  }
 };
 
 export const fetchAnimeImage = async (id: number): Promise<any> => {

@@ -1,10 +1,10 @@
 import React from "react";
-import AnimeList from "./_components/features/RandomAnime";
+import SeasonalAnime from "./_components/features/SeasonalAnime";
 
 export default function Home() {
   return (
     <div>
-      <AnimeList />
+      <SeasonalAnime />
     </div>
   );
 }
