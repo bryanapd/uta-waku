@@ -2,10 +2,10 @@ import React, { Fragment, ReactNode } from "react";
 import Image from "next/image";
 import classNames from "classnames";
 
-import { HeaderProps, BrandProps, LinksProps } from "../_types/header";
+import { HeaderProps, BrandProps, LinksProps } from "@/app/_types/header";
 
 export const AppHeader = ({ children }: HeaderProps) => (
-  <div className="border-t-2 border-transparent fixed w-full z-100 p-1">
+  <div className="border-t-2 border-transparent fixed top-0 w-full z-100 p-1">
     <div className="container mx-auto">
       <div className="flex flex-row justify-between">{children}</div>
     </div>
@@ -14,11 +14,24 @@ export const AppHeader = ({ children }: HeaderProps) => (
 
 export const AppSpacer = () => <div className="h-[72px]" />;
 
-export const AppBrand = ({ logo, title, alt, width, height, onMenuClick }: BrandProps) => (
+export const AppBrand = ({
+  logo,
+  title,
+  alt,
+  width,
+  height,
+  onMenuClick,
+}: BrandProps) => (
   <div className="flex w-full md:w-auto min-h-[50px] overflow-hidden">
     <a href="/" className="pr-5 cursor-pointer">
       {logo ? (
-        <Image src={logo} alt={alt} width={width} height={height} className="w-[60px] h-[60px] rounded-xl" />
+        <Image
+          src={logo}
+          alt={alt}
+          width={width}
+          height={height}
+          className="w-[60px] h-[60px] rounded-xl"
+        />
       ) : (
         <h1 className="text-lg">{title}</h1>
       )}
