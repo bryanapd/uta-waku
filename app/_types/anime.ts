@@ -16,23 +16,23 @@ export interface Anime {
   animethemes?: AnimeTheme[];
 }
 
-export interface Resource {
+interface Resource {
   external_id?: number;
   animeresource?: AnimeResource;
 }
 
-export interface AnimeResource {
+interface AnimeResource {
   as?: string | null;
 }
 
-export interface Image {
+interface Image {
   id?: number;
   facet?: string;
   path?: string;
   link?: string;
 }
 
-export interface AnimeTheme {
+interface AnimeTheme {
   id?: number;
   sequence?: number;
   slug?: string;
@@ -41,7 +41,7 @@ export interface AnimeTheme {
   song?: Song;
 }
 
-export interface AnimeThemeEntry {
+interface AnimeThemeEntry {
   id?: number;
   episodes?: string;
   notes?: string;
@@ -51,7 +51,7 @@ export interface AnimeThemeEntry {
   videos?: Video[];
 }
 
-export interface Video {
+interface Video {
   id?: number;
   basename?: string;
   filename?: string;
@@ -68,7 +68,7 @@ export interface Video {
   link?: string;
 }
 
-export interface Song {
+interface Song {
   id?: number;
   title?: string;
 }
