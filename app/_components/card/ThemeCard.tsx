@@ -6,7 +6,7 @@ interface ThemeCardProps {
   image: string;
   song: SongType;
   anime: Anime;
-  animeTheme: AnimeTheme
+  animeTheme: AnimeTheme;
 }
 
 const defaultImage =
@@ -14,28 +14,25 @@ const defaultImage =
 
 const ThemeCard = ({ image, anime, song, animeTheme }: ThemeCardProps) => {
   const { name } = anime;
+  const { slug } = animeTheme;
+  const { title, artists } = song;
   return (
-    <div className="flex flex-row rounded-lg overflow-hidden min-h-[60px] relative shadow-lg cursor-pointer ease-in duration-300 hover:scale-105">
-      <div>
-        <div className="border-t-4 border-y-amber-400" />
-        <Image
-          src={image! || defaultImage}
-          alt={anime.name}
-          objectFit="cover"
-          height={0}
-          width={150}
-          style={{ height: "100px", width: "100%" }}
-        />
-      </div>
+    <div className="flex flex-row rounded-lg bg-white overflow-hidden max-h-[64px] relative shadow-lg cursor-pointer ease-in duration-300 hover:scale-105">
+      <Image
+        src={image! || defaultImage}
+        alt={anime.name}
+        objectFit="cover"
+        height={0}
+        width={150}
+        className="h-full w-full max-w-[48px]"
+      />
       <div className="p-2">
-        <h1 className="text-xs font-semibold mb-3 line-clamp-1">{name}</h1>
-        <div className="flex flex-row justify-between items-center">
-          <div>
-            <h1 className="text-xs font-normal"></h1>
-            <h1 className="text-xs font-normal"></h1>
-          </div>
-          <div className="w-max h-max p-1 bg-amber-400 rounded-lg">
-            <h1 className="text-xs text-white font-semibold"></h1>
+        <h1 className="text-xs font-semibold line-clamp-1">{`${name}`}</h1>
+        <div className="justify-between items-center">
+          <div className="flex flex-row items-center">
+            <p className="text-xs font-normal">{slug}</p>
+            <p className="mx-1 text-lg text-gray-600">&#x2022;</p>
+            <h1 className="text-xs font-semibold line-clamp-1">{song.title}</h1>
           </div>
         </div>
       </div>

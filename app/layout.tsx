@@ -56,7 +56,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} bg-gray-100`}>
         <AppHeader>
           <AppBrand
             title="Breezarre Anime Tracker"

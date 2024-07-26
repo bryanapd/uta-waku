@@ -37,7 +37,7 @@ const SeasonalAnime = () => {
   return (
     <div className="container mx-auto mt-10">
       <h1 className="text-lg font-bold mb-4">{`${season} ${year}`}</h1>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-7">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-7">
         {data.anime.map((anime: Anime) => (
           <AnimeCard
             key={anime.id}

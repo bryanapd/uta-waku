@@ -4,14 +4,14 @@ import Image from "next/image";
 
 const AnimeCard = (props: Anime) => {
   return (
-    <div className="rounded-lg overflow-hidden min-h-[60px] relative shadow-lg cursor-pointer ease-in duration-300 hover:scale-105">
+    <div className="bg-white rounded-lg overflow-hidden min-h-[60px] relative shadow-lg cursor-pointer ease-in duration-300 hover:scale-105">
       <Image
         src={props.image!}
         alt={props.name}
         objectFit="cover"
         height={0}
         width={150}
-        style={{ height: "220px", width: "100%" }}
+        style={{ height: "auto", width: "100%" }}
       />
       <div className="border-t-4 border-y-amber-400" />
       <div className="p-2">

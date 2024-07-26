@@ -1,12 +1,14 @@
 import React from "react";
 import SeasonalAnime from "./_components/features/SeasonalAnime";
-import UtaList from "./_components/features/UtaList";
+import RecentlyAdded from "./_components/features/RecentlyAdded";
+import MostViewed from "./_components/features/MostViewed";
 
 export default function Home() {
   return (
-    <div>
+    <div className="sm:container md:container lg:container xl:container mx-auto pb-10">
       <SeasonalAnime />
-      <UtaList />
+      <RecentlyAdded />
+      <MostViewed />
     </div>
   );
 }
